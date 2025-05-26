@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import { Check, Star, Users, Zap, Shield, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendWelcomeEmail } from "@/lib/email";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -38,11 +39,23 @@ const Index = () => {
           throw error;
         }
       } else {
-        setIsSubmitted(true);
-        toast({
-          title: "You're on the list!",
-          description: "We'll notify you when Evolux launches.",
-        });
+        try {
+          // Send welcome email
+          await sendWelcomeEmail(email);
+          setIsSubmitted(true);
+          toast({
+            title: "You're on the list!",
+            description: "We'll notify you when Refyne launches.",
+          });
+        } catch (emailError) {
+          console.error('Failed to send welcome email:', emailError);
+          // Still show success to user since they're on the waitlist
+          setIsSubmitted(true);
+          toast({
+            title: "You're on the list!",
+            description: "We'll notify you when Refyne launches.",
+          });
+        }
       }
     } catch (error) {
       toast({
