@@ -86,11 +86,6 @@ const Index = () => {
               <img src="/refynemark.png" alt="Refyne logo" className="w-8 h-8" />
               <span className="text-xl font-bold text-black">Refyne</span>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-black transition-colors">Features</a>
-              <a href="#tools" className="text-gray-600 hover:text-black transition-colors">Tools</a>
-              <a href="#about" className="text-gray-600 hover:text-black transition-colors">About</a>
-            </div>
           </nav>
         </header>
 
