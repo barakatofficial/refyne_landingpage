@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           </p>
           
           <p style="color: #333; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
-            You'll be among the first to know when Refyne launches, giving you early access to our AI-powered revision platform. We're building something special, and we can't wait to share it with you.
+            You'll be among the first to know when Refyne launches, giving you early access to our revision platform. We're building something special, and we can't wait to share it with you.
           </p>
           
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
